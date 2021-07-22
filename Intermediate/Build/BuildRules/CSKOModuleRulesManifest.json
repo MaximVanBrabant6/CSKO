@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\Personal Projects\\Unreal\\CSKO\\Source\\CSKO\\CSKO.Build.cs",
+		"C:\\Personal Projects\\Unreal\\CSKO\\Source\\CSKO.Target.cs",
+		"C:\\Personal Projects\\Unreal\\CSKO\\Source\\CSKOEditor.Target.cs"
+	],
+	"EngineVersion": "4.25.4"
+}

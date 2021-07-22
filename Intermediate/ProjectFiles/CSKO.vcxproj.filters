@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\CSKO.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{C894E222-7604-4DFF-B501-EE80C59D9D8B}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\CSKO.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\CSKOEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{4D6F7B25-1A6D-4540-A0F4-9E194B83733B}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\CSKO">
+      <UniqueIdentifier>{5CD9A9FB-72E6-4CC0-988B-AA06CB77828B}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\CSKO\CSKO.Build.cs">
+      <Filter>Source\CSKO</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\CSKO\CSKO.cpp">
+      <Filter>Source\CSKO</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\CSKO\CSKO.h">
+      <Filter>Source\CSKO</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\CSKO\CSKOCharacter.cpp">
+      <Filter>Source\CSKO</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\CSKO\CSKOCharacter.h">
+      <Filter>Source\CSKO</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\CSKO\CSKOGameMode.cpp">
+      <Filter>Source\CSKO</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\CSKO\CSKOGameMode.h">
+      <Filter>Source\CSKO</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
