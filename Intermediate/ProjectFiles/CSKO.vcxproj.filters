@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\CSKO.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{C894E222-7604-4DFF-B501-EE80C59D9D8B}</UniqueIdentifier>
+      <UniqueIdentifier>{89E75BC7-BCD4-4D41-A597-954E0A5FAA9B}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\CSKO.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,10 @@
     <None Include="..\..\Source\CSKOEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{4D6F7B25-1A6D-4540-A0F4-9E194B83733B}</UniqueIdentifier>
+      <UniqueIdentifier>{1E9EB757-2415-4ABB-AD03-13CB6AAA80B8}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\CSKO">
-      <UniqueIdentifier>{5CD9A9FB-72E6-4CC0-988B-AA06CB77828B}</UniqueIdentifier>
+      <UniqueIdentifier>{2561AA36-8483-4B00-92EB-631485294C51}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\CSKO\CSKO.Build.cs">
       <Filter>Source\CSKO</Filter>
@@ -52,6 +54,33 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\CSKO\CSKOGameMode.h">
       <Filter>Source\CSKO</Filter>
+    </ClInclude>
+    <Filter Include="Source\CSKO\Characters">
+      <UniqueIdentifier>{7B127F33-82D1-4448-A216-CF19A646A2FC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\CSKO\Characters\BaseCharacter.cpp">
+      <Filter>Source\CSKO\Characters</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\CSKO\Characters\BaseCharacter.h">
+      <Filter>Source\CSKO\Characters</Filter>
+    </ClInclude>
+    <Filter Include="Source\CSKO\Controllers">
+      <UniqueIdentifier>{FF59C368-3959-4DA5-B115-90DD77278A03}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\CSKO\Controllers\FPSController.cpp">
+      <Filter>Source\CSKO\Controllers</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\CSKO\Controllers\FPSController.h">
+      <Filter>Source\CSKO\Controllers</Filter>
+    </ClInclude>
+    <Filter Include="Source\CSKO\GameModes">
+      <UniqueIdentifier>{10E6390F-03AD-4D35-82CC-8189A536DB82}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\CSKO\GameModes\TDMGameMode.cpp">
+      <Filter>Source\CSKO\GameModes</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\CSKO\GameModes\TDMGameMode.h">
+      <Filter>Source\CSKO\GameModes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

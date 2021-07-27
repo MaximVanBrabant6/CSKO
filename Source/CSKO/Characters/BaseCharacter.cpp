@@ -14,6 +14,8 @@ ABaseCharacter::ABaseCharacter()
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->SetupAttachment(GetRootComponent());
 
+	Camera->bUsePawnControlRotation = true;
+	
 	FPArms = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("FPArms"));
 	FPArms->SetupAttachment(Camera);
 
@@ -38,5 +40,41 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	if (!PlayerInputComponent)
+		return;
+
+	PlayerInputComponent->BindAxis("Lookup", this, &ABaseCharacter::LookUpCallback);
+	PlayerInputComponent->BindAxis("Turn", this, &ABaseCharacter::TurnCallback);
+	PlayerInputComponent->BindAxis("MoveForward", this, &ABaseCharacter::MoveForwardCallback);
+	PlayerInputComponent->BindAxis("MoveRight", this, &ABaseCharacter::MoveRightCallback);
+
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ABaseCharacter::JumpCallback);
+
+}
+
+void ABaseCharacter::LookUpCallback(float Axis)
+{
+	AddControllerPitchInput(Axis);
+}
+
+void ABaseCharacter::TurnCallback(float Axis)
+{
+	AddControllerYawInput(Axis);
+}
+
+void ABaseCharacter::MoveForwardCallback(float Axis)
+{
+
+	AddMovementInput(GetActorForwardVector(), Axis);
+}
+
+void ABaseCharacter::MoveRightCallback(float Axis)
+{
+	AddMovementInput(GetActorRightVector(), Axis);
+}
+
+void ABaseCharacter::JumpCallback()
+{
+	Jump();
 }
 

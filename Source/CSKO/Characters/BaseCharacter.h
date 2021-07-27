@@ -37,4 +37,12 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	void LookUpCallback(float Axis);
+	void TurnCallback(float Axis);
+	void MoveForwardCallback(float Axis);
+	void MoveRightCallback(float Axis);
+
+	void JumpCallback();
+
+
 };
