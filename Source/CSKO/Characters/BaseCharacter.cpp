@@ -9,7 +9,7 @@
 ABaseCharacter::ABaseCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->SetupAttachment(GetRootComponent());
@@ -19,6 +19,8 @@ ABaseCharacter::ABaseCharacter()
 	FPArms = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("FPArms"));
 	FPArms->SetupAttachment(Camera);
 
+	//Base mesh
+	GetMesh()->bOwnerNoSee = true;
 }
 
 // Called when the game starts or when spawned
