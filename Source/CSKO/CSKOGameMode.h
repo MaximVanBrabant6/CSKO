@@ -13,6 +13,9 @@ class ACSKOGameMode : public AGameModeBase
 
 public:
 	ACSKOGameMode();
+
+	//Runs both on server and client
+	virtual void PostLogin(APlayerController* NewPlayer) override;
 };
 
 
