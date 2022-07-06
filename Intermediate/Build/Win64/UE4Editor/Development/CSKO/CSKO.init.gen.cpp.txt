@@ -1,3 +1,0 @@
-C:\Personal Projects\Unreal\CSKO\Intermediate\Build\Win64\UE4Editor\Development\CSKO\Definitions.CSKO.h
-C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
