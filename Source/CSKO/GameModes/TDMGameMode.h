@@ -3,14 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/GameModeBase.h"
+#include "CSKO/CSKOGameMode.h"
 #include "TDMGameMode.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class CSKO_API ATDMGameMode : public AGameModeBase
+class CSKO_API ATDMGameMode : public ACSKOGameMode
 {
 	GENERATED_BODY()
 	

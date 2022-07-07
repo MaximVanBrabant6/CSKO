@@ -4,15 +4,36 @@
 #include "FPSController.h"
 #include "Blueprint/UserWidget.h"
 
-void AFPSController::ShowTeamSelection()
+AFPSController::AFPSController()
 {
-
+	//to make sure the game doesn't make a spectator pawn for us and then attaches us to it.
+	bAutoManageActiveCameraTarget = false;
 }
 
-//This function will only be run on the client => not on the server 
-// (so if the server comes to this function call it will skip it
-void AFPSController::RandomShit()
+//Called on server
+void AFPSController::ShowTeamSelection()
 {
+	Client_ShowTeamSelection();
+}
+
+void AFPSController::SetCameraView(AActor* camera)
+{
+	Client_SetCameraView(camera);
+}
+
+void AFPSController::Client_SetCameraView_Implementation(AActor* camera)
+{
+	if(!ensure(camera != nullptr))
+		return;
+	
+	SetViewTargetWithBlend(camera);
+}
+
+void AFPSController::Client_ShowTeamSelection_Implementation()
+{
+	if(!ensure(TeamSelectionWidget != nullptr))
+		return;
+	
 	TeamSelectionWidget = CreateWidget(this, TeamSelectionWidgetClass);
 
 	TeamSelectionWidget->AddToViewport();

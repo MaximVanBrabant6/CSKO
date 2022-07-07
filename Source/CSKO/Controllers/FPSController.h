@@ -16,11 +16,18 @@ class CSKO_API AFPSController : public APlayerController, public IBPI_PlayerCont
 	GENERATED_BODY()
 	
 public:
+	AFPSController();
+	
 	//INTERFACE OVERRIDE
 	virtual void ShowTeamSelection() override;
+	virtual void SetCameraView(AActor* camera) override;
 
-	//UFUNCTION(Client, Reliable)
-	void RandomShit();
+private:
+	UFUNCTION(Client, Reliable)
+	void Client_ShowTeamSelection();
+
+	UFUNCTION(Client, Reliable)
+	void Client_SetCameraView(AActor* camera);
 private:
 
 

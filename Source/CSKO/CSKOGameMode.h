@@ -14,8 +14,13 @@ class ACSKOGameMode : public AGameModeBase
 public:
 	ACSKOGameMode();
 
-	//Runs both on server and client
+	//Only runs on server
 	virtual void PostLogin(APlayerController* NewPlayer) override;
+protected:
+	virtual void BeginPlay() override;
+	
+	UPROPERTY(VisibleAnywhere)
+	ACameraActor* PreviewLevelCamera{nullptr};
 };
 
 

@@ -25,5 +25,5 @@ class CSKO_API IBPI_PlayerController
 public:
 	virtual void ShowTeamSelection() = 0;
 
-
+	virtual void SetCameraView(AActor* camera) = 0;
 };
