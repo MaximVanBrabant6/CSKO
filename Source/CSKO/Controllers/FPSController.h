@@ -17,11 +17,13 @@ class CSKO_API AFPSController : public APlayerController, public IBPI_PlayerCont
 	
 public:
 	AFPSController();
-	
+
+#pragma region ControllerInterface
 	//INTERFACE OVERRIDE
 	virtual void ShowTeamSelection() override;
 	virtual void SetCameraView(AActor* camera) override;
-
+#pragma endregion
+	
 private:
 	UFUNCTION(Client, Reliable)
 	void Client_ShowTeamSelection();

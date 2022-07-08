@@ -13,7 +13,23 @@ AFPSController::AFPSController()
 //Called on server
 void AFPSController::ShowTeamSelection()
 {
-	Client_ShowTeamSelection();
+	//Because it's a client function -> only called on the the client that Own this controller!!!
+	//"this" is explicit here to emphasize that the controller is owned by the one connecting client  
+	this->Client_ShowTeamSelection();
+
+	if(GetNetMode() == ENetMode::NM_DedicatedServer)
+	{
+		UE_LOG(LogTemp,Warning,TEXT("showteamselcetion on server"));
+	}
+	else if(GetNetMode() == ENetMode::NM_ListenServer)
+	{
+		UE_LOG(LogTemp,Warning,TEXT("showteamselcetion on listen server"));
+	}
+	else if(GetNetMode() == ENetMode::NM_Client)
+	{
+		UE_LOG(LogTemp,Warning,TEXT("showteamselcetion on client"));
+
+	}
 }
 
 void AFPSController::SetCameraView(AActor* camera)
@@ -23,7 +39,7 @@ void AFPSController::SetCameraView(AActor* camera)
 
 void AFPSController::Client_SetCameraView_Implementation(AActor* camera)
 {
-	if(!ensure(camera != nullptr))
+	if(!ensureAlways(camera != nullptr))
 		return;
 	
 	SetViewTargetWithBlend(camera);
@@ -31,7 +47,7 @@ void AFPSController::Client_SetCameraView_Implementation(AActor* camera)
 
 void AFPSController::Client_ShowTeamSelection_Implementation()
 {
-	if(!ensure(TeamSelectionWidget != nullptr))
+	if(!ensureAlways(TeamSelectionWidget != nullptr))
 		return;
 	
 	TeamSelectionWidget = CreateWidget(this, TeamSelectionWidgetClass);

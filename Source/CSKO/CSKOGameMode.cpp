@@ -15,17 +15,21 @@ ACSKOGameMode::ACSKOGameMode()
 	PlayerControllerClass = AFPSController::StaticClass();
 }
 
+//run on server each time a player joins the map
 void ACSKOGameMode::PostLogin(APlayerController* NewPlayer)
 {
-	//Cast to an interface -> this can be used on any controller doesn't matter which type (more performant)
-	IBPI_PlayerController* PlayerController = Cast<IBPI_PlayerController>(NewPlayer);
-	
-	if (!PlayerController)
+	if(!ensure(PreviewLevelCamera != nullptr))
 		return;
 	
-	//we don't want this to be run on server
-	PlayerController->SetCameraView(PreviewLevelCamera);
-	PlayerController->ShowTeamSelection();
+	//Cast to an interface -> don't use Execute_ static function cause its not a blueprint related function (blueprintNativeEvent, blueprintCallable)
+	IBPI_PlayerController* IPlayerController = Cast<IBPI_PlayerController>(NewPlayer);
+	
+	if (!IPlayerController)
+		return;
+
+	
+	IPlayerController->SetCameraView(PreviewLevelCamera);
+	IPlayerController->ShowTeamSelection();
 }
 
 void ACSKOGameMode::BeginPlay()
@@ -34,7 +38,7 @@ void ACSKOGameMode::BeginPlay()
 	
 	PreviewLevelCamera = Cast<ACameraActor>(UGameplayStatics::GetActorOfClass(GetWorld(), ACameraActor::StaticClass()));
 
-	if(!ensure(PreviewLevelCamera != nullptr))
+	if(!ensureAlwaysMsgf(PreviewLevelCamera != nullptr, TEXT("No valid camera was found for this level")))
 	{
 		return;
 	}
