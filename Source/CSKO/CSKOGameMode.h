@@ -21,6 +21,8 @@ protected:
 	
 	UPROPERTY(VisibleAnywhere)
 	ACameraActor* PreviewLevelCamera{nullptr};
+private:
+	virtual void InitGame(const FString & MapName, const FString & Options, FString & ErrorMessage) override; 
 };
 
 
